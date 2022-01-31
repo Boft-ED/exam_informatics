@@ -22,8 +22,8 @@ s = [int(x) for x in f]
 f.close()
 res = []
 for i in range(1, len(s)):
-    if (str((s[i]))[-2::] == '17' or str(s[i - 1])[-2::] == '17') and ((s[i] + s[i - 1]) % 2 == 0):
-        res.append(s[i] + s[i - 1])
+    if (abs(s[i]) % 100 == 17 or abs(s[i-1]) % 100 == 17) and (s[i] + s[i-1]) % 2 == 0:
+        res.append(s[i] + s[i-1])
 print(len(res), max(res))
 
 # В файле 17-205.txt содержится последовательность целых чисел. Элементы
