@@ -17,3 +17,13 @@ while "111" in s:
     s = s.replace("111", "2", 1)
     s = s.replace("222", "1", 1)
 print(s)
+
+
+s = 85 * "9"
+while "666" in s or "999" in s:
+    if "666" in s:
+        s = s.replace("666", "9", 1)
+    else:
+        s = s.replace("999", "6", 1)
+print(s)
+
