@@ -27,3 +27,13 @@ for i in a:
 
 print(count)
 
+
+
+from itertools import permutations
+s = 'ТАРТАР'
+res = set()
+for comb in permutations(s):
+    res.add(''.join(comb))
+print(len(res))
+
+1,2,4,6,8,10,12,17,14,
