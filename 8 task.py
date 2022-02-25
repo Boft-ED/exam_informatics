@@ -78,3 +78,34 @@ for s1 in g:
                                                     if word.count('Л') == 1:
                                                         count += 1
 print(count)
+
+
+from itertools import product
+k = 0
+words=list(product('AБВГДЕ', repeat=4))
+word=list(map("".join, words))
+
+for x in range(len(word)):
+    if word[x][0] != word[x][2] and word[x][2] != word[x][3] and word[x][2] != 'E':
+        if word[x].count('A') > 0:
+            k += 1
+print(k)
+
+# Определите количество семизначных чисел, записанных в семеричной системе счисления, учитывая, что числа нем
+# начинаться с цифр 3 и 5 и не должны содержать сочетания цифр 22 и 44 одновременно.
+
+alf = '0123456'
+count = 0
+word = ''
+for s1 in alf:
+    for s2 in alf:
+        for s3 in alf:
+            for s4 in alf:
+                for s5 in alf:
+                    for s6 in alf:
+                        for s7 in alf:
+                            word = s1 + s2 + s3 + s4 + s5 + s6 + s7
+                            if word[0] != '0' and word[0] != '3' and word[0] != '5':
+                                if not('22' in word and '44' in word):
+                                    count += 1
+print(count)
