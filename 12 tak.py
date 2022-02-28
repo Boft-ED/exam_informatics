@@ -66,3 +66,10 @@ for k1 in range(1, 50):
             if s.count('1') == 70 and s.count('2') == 56 and s.count('3') == 23:
                 print(2 + k1 + k2 + k3)
                 break
+
+
+a = 112*'7'
+while ('111' in a) or ('7777' in a):
+    a=a.replace('111', '7',1)
+    a=a.replace('7777', '1',1)
+print(a)

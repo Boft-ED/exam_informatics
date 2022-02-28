@@ -109,3 +109,34 @@ for s1 in alf:
                                 if not('22' in word and '44' in word):
                                     count += 1
 print(count)
+
+from itertools import product
+words = list(product('КОМ', repeat=6))
+word = list(map("".join,words))
+
+k = 0
+for x in range(len(word)):
+    if word[x][3]!='К' and word[x][4]!='К' and word[x][5]!='К':
+        if word[x].count('K')<3:
+            k+=1
+print(k)
+
+# 8. Саша составляет шестибуквенные слова, в которых встречаются толь-
+# ко буквы С, О, Н. Причём буква С может стоять только на первом, вто-
+# ром или третьем местах и встречаться или только один раз, или ровно три
+# раза, или не встречаться вовсе. Қаждая из других допустимых букв мо-
+# жет встречаться в слове на любом месте или не встречаться совсем. Сло-
+# вом считается любая допустимая последовательность букв, необязатель-
+# ＿ но осмысленная. Сколько существует таких слов, которые может напи-
+# стать Саша?
+
+from itertools import product
+words = list(product('СОН', repeat=6))
+word = list(map("".join,words))
+
+k = 0
+for x in range(len(word)):
+    if word[x][3]!='С' and word[x][4]!='С' and word[x][5]!='С':
+        if word[x].count('С')==0 or word[x].count('С')==1 or word[x].count('С')==3:
+            k+=1
+print(k)
