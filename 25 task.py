@@ -82,3 +82,12 @@ for j in range(312614, 312652):
                break
    if len(count) == 6:
        print(" ".join(str(s) for s in count))
+
+
+for x in range(26600,28101):
+    k = 0
+    for i in range(2,x//2+1):
+        if x % i == 0:
+            k += 1
+    if k % 13 == 0 and k != 0:
+        print(x,k)

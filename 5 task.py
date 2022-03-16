@@ -390,3 +390,19 @@ while True:
         print(n)
         break
     n += 1
+
+def alg(N):
+    if N % 2 == 0:
+        N = bin(N)[2:] + "01"
+    else:
+        N = bin(N)[2:] + "10"
+
+    return int(N, 2)
+
+
+a = []
+for i in range(1, 100000):
+    t = alg(i)
+    if t > 81:
+        a.append(t)
+print(min(a))

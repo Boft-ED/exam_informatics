@@ -24,3 +24,22 @@ for line in i:
     if line.count('E') > line.count('A'):
         result += 1
 print(result)
+
+
+f = open('24.txt')
+k = 0
+maxkol = 0
+a = f.read()
+for x in range(len(a)-1):
+    k = 1
+    if a[x] != a[x+1]:
+        for i in range(x+2, len(a)-2):
+            if a[i] == a[i+1] and a[i] != a[x] != a[x+1]:
+                k += 1
+            elif a[i+1] != a[i+2] and a[i] != a[i+2]:
+                if k > maxkol:
+                    maxkol = k
+                    break
+            else:
+                break
+print(maxkol)

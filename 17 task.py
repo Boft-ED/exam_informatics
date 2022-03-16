@@ -111,3 +111,17 @@ for i in range(len(a) - 1):
         count += 1
         m = max(m, a[i] + a[i+1])
 print(count, m)
+
+
+
+with open("17.txt") as f:
+    s = f.read().split()
+
+nums = [int(i) for i in s]
+
+a = []
+for num in nums:
+    if num % 5 == 0 and num % 7 == 0 and num % 2 != 0 and num % 11 != 0 and num % 91 != 0:
+        a.append(num)
+
+print(max(a), len(a))

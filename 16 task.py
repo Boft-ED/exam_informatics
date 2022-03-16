@@ -30,3 +30,5 @@ def f16(n):
     if n >= 1000:
         return(2+f16(n-42))
 print(f16(1150))
+
+
