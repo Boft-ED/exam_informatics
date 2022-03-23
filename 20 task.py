@@ -48,3 +48,25 @@ def f(x, p):
 for s in range(1, 100 +1):
     if f(s, 1):
         print(s)
+
+#Задание 20 № 27766 Добавить в вариант
+
+def f(x, y, p):
+    if x + y >= 69 and p == 4:
+        return True
+    else:
+        if x + y < 69 and p == 4:
+            return False
+        else:
+            if x + y >= 69:
+                return False
+    if p % 2 == 1:
+        return f(x+1, y, p+1) or f(x, y+1, p+1) or f(x*2, y, p+1) or f(x, y*3, p+1)
+    else:
+        return f(x+1, y, p+1) and f(x, y+1, p+1) and f(x*2, y, p+1) and f(x, y*3, p+1)
+for s in range(1, 58 +1):
+    if f(10, s, 1):
+        print(s)
+
+
+

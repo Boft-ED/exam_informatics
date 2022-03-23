@@ -57,3 +57,30 @@ for s in range(1, 80 + 1):
     if f(s, 1):
         print(s)
         break
+
+
+
+def f(x,p):
+    if x >= 68 and p == 3:
+        return True
+    else:
+        if x < 68 and p == 3:
+            return False
+    return f(x+1,p+1) or f(x+4, p+1) or f(x*5, p+1)
+
+for s in range(1, 67+1):
+    if f(s, 1):
+        print(s)
+        break
+
+#Задание 19 № 27765 Добавить в вариант
+
+def f(x,y,p):
+    if x + y >= 69 or p > 2:
+        return p == 2
+    return f(x+1, y, p+1) or f(x, y+1, p+1) or f(x*2, y, p+1) or f(x, y*3, p+1)
+
+for s in range(1,58):
+    if f(10, s, 0):
+        print(s)
+        break
