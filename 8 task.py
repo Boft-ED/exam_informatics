@@ -166,3 +166,30 @@ for x in range(len(word)):
     if word[x].count('О') == 2:
         k += 1
 print(k)
+
+# Саша составляет слова, переставляя буквы из слова «ИДИЛЛИЯ». Словом считается любая допустимая последовательность букв, не обяза­
+# тельно осмысленная.
+# Сколько существует различных слов, которые может написать Саша?
+
+from itertools import permutations
+s = 'ИДИЛЛИЯ'
+res = set()
+for comb in permutations(s):
+    res.add(''.join(comb))
+print(len(res))
+
+
+# Петя составляет слова из слова ПАРУС и записывает их в алфавитном порядке в список. Вот начало списка 
+# Под каким номером идет первое слово в списке, начинающегося на  У, в котором две буквы А не стоят рядом?
+
+from itertools import product
+words = list(product('АПРСУ', repeat=5))
+k = 0
+
+for x in words:
+    k += 1
+    x = ''.join(x)
+    if x[0] == 'У' and 'АА' not in x:
+        print(k)
+        print(x)
+        break

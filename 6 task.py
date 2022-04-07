@@ -42,3 +42,23 @@ for i in range(1, 1010):
     if n == 80:
         count += 1
 print(count)
+
+
+def f(x):
+    L = x
+    M = 132
+    if L % 2 != 0:
+        M = 64
+    while L != M:
+        if L > M:
+            L -= M
+        else:
+            M -= L
+    return M
+
+x = 1
+while True:
+    if f(x) < 480 and f(x) == 12:
+        print(x)
+        break
+    x += 1
