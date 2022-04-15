@@ -62,3 +62,18 @@ while True:
         print(x)
         break
     x += 1
+
+
+
+count = 0
+for i in range(1, 1010):
+    s = i
+    x = i
+    s = 100 * s + x
+    n = 1
+    while s < 2021:
+        s = s + 5 * n
+        n = n + 1
+    if n == 15:
+        count += 1
+print(count)

@@ -159,3 +159,165 @@ for i in range(len(a)):
         k += 1
         maxchr = max(maxchr, a[i] + a[i+1])
 print(k,maxchr)
+
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+for i in range(len(a)):
+    if a[i] % 3 == 0 and a[i] % 7 !=0 and a[i] % 17 !=0  and a[i] % 19 !=0 and a[i] % 27 !=0:
+        ans.append(a[i])
+print(len(ans),max(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+
+for i in range(len(a)):
+    if a[i] % 10 == 3 or a[i] % 10 == 5:
+        ans.append(a[i])
+print(len(ans),max(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+
+for i in range(len(a)):
+    if (a[i] % 16 == 11 or a[i] % 16 == 13) and a[i] % 7 == 0 and a[i] % 6 != 0 and a[i] % 13 != 0 and a[i] % 19 != 0:
+        ans.append(a[i])
+print(sum(ans),len(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+for i in range(len(a)-1):
+    if abs(a[i]) % 10 == 7 or abs(a[i]) % 10 == 7:
+        ans.append(a[i]+a[i+1])
+print(len(ans),max(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+
+for i in range(len(a)-1):
+    if (a[i] + a[i+1]) % 3 == 0 and (a[i] + a[i+1]) % 6 != 0 and abs(a[i] * a[i+1]) % 10 == 8:
+        ans.append(a[i]+a[i+1])
+print(len(ans),max(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+
+for i in range(len(a)-2):
+    if (a[i] * a[i+1] * a[i+2]) % 7 == 0 and abs(a[i] + a[i+1] + a[i+2]) % 10 == 5:
+        ans.append(a[i] + a[i+1] + a[i+2])
+print(len(ans),min(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+
+for i in range(len(a)):
+    if oct(a[i])[-1] == '7' and oct(a[i])[-2] == '2':
+        ans.append(a[i])
+print(len(ans),max(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+
+for i in range(len(a)):
+    s = sum(map(int,str(a[i])))
+    if s % 3 == 0:
+        ans.append(a[i])
+print(len(ans),max(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+avg = sum(a)/len(a)
+
+for i in range(len(a)-1):
+    if a[i] > avg and a[i+1] > avg and abs(a[i] + a[i+1]) % 100 == 31:
+        ans.append(a[i]+a[i+1])
+print(len(ans),max(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+m = max(x for x in a if x % 119 == 0)
+
+ans = []
+
+for i in range(len(a)-1):
+    if (a[i] or a[i+1]) > m and (a[i] % 100 == 21 or a[i+1] % 100 == 21):
+        ans.append(a[i] + a[i+1])
+print(len(ans),min(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+
+max = max([x for x in a if x % 2 != 0])
+min = min([x for x in a if x % 2 != 0])
+ans = []
+
+for i in range(len(a)-1):
+    if (a[i] + a[i+1]) % 2 == 0 and a[i] + a[i+1] > max + min:
+        ans.append(a[i] + a[i+1])
+print(len(ans),max(ans))
+
+
+a = [int(x) for x in open('17.txt')]
+
+ans = []
+
+for i in range(len(a)):
+    for k in range(i, len(a)): # два различных элемента последовательности
+        if (a[i] + a[k]) % 2 != 0 and (a[i] * a[k]) % 3 == 0:
+            ans.append(a[i] + a[k])
+print(len(ans), max(ans))
+
+
+a = [int(x) for x in open('17.txt')]
+
+ans = []
+
+for i in range(len(a)-1):
+    for k in range(i, len(a)): # два различных элемента последовательности
+        if (a[i] % 160 != a[k] % 160) and (abs(a[i]) % 7 == 0 or abs(a[k]) % 7 == 0):
+            ans.append(a[i]+a[k])
+print(len(ans),max(ans))
+
+
+
+a = [int(x) for x in open('17.txt')]
+
+ans = []
+for i in range(len(a)):
+    for k in range(i, len(a)): # два различных элемента последовательности
+        if (a[i] + a[k]) % 2 != 0 and (a[i] * a[k]) % 3 == 0:
+            ans.append(a[i] + a[k])
+print(len(ans),max(ans))
+
+
+a = [int(x) for x in open('17.txt')]
+
+ans = []
+
+for i in range(len(a)-1):
+    if (a[i] + a[i+1]) % 2 == 0 and abs(a[i] + a[i+1]) % 10 != 6:
+        ans.append((a[i] + a[i+1])//2)
+print(len(ans),max(ans))
+
+# если число отрицательное, то abs(a[i])
+# часть условия с союзом или надо брать в скобки (a[i] % 16 == 11 or a[i] % 16 == 13)
