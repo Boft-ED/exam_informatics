@@ -319,5 +319,17 @@ for i in range(len(a)-1):
         ans.append((a[i] + a[i+1])//2)
 print(len(ans),max(ans))
 
+#Определите количество пар последовательности, в которых хотя бы одно число кратно минимальному числу в последовательности, кратному 17
+
+a = [int(x) for x in open('17.txt')]
+ans = []
+min = min([x for x in a if x % 17 == 0])
+
+for x in range(len(a)-1):
+    if a[x] % min == 0 or a[x+1] % min == 0:
+        ans.append(a[x] + a[x+1])
+print(len(ans),max(ans))
+
+
 # если число отрицательное, то abs(a[i])
 # часть условия с союзом или надо брать в скобки (a[i] % 16 == 11 or a[i] % 16 == 13)

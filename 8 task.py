@@ -193,3 +193,17 @@ for x in words:
         print(k)
         print(x)
         break
+
+# Определите количество пятизначных чисел, записанных в десятичной системе счисления, учитывая, что числа не могут заканчиваться на цифры 3, 4 и 7 и не должны содержать тройки соседних одинаковых цифр (например, 000).
+
+from itertools import product
+words = list(product('0123456789', repeat=5))
+
+k = 0
+
+for x in words:
+    s = ''.join(x)
+    if s[-1] not in '347' and s[0] != '0':
+        if all(d*3 not in s for d in '0123456789'):
+            k += 1
+print(k)

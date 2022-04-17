@@ -77,3 +77,18 @@ for i in range(1, 1010):
     if n == 15:
         count += 1
 print(count)
+
+
+count = 0
+for i in range(1019, 100000, 1019):
+    for j in range(1019, 100000, 1019):
+        x = i
+        y = j
+        while x != y:
+            if x > y:
+                x -= y
+            else:
+                y -= x
+        if x == 1019:
+            count += 1
+print(count)
