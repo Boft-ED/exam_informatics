@@ -434,3 +434,127 @@ for n in range(1,10000):
     r = int(b,2)
     if r < 1000:
         print(n)
+
+# бит четности и в задачи требуется результат алгоритма 
+
+for i in range(1, 100):
+    b = bin(i)[2:]
+    if b.count('1') % 2 == 0:
+        b = b + '0'
+    else:
+        b = b + '1'
+    if b.count('1') % 2 == 0:
+        b = b + '0'
+    else:
+        b = b + '1'
+    r = int(b, 2)
+    if r > 130:
+        print(r)
+
+# дублируется последняя цифра и здесь требуют число n
+for i in range(1, 100):
+    b = bin(i)[2:]
+    b = b + b[-1]
+    if b.count('1') % 2 == 0:
+        b += '0'
+    else:
+        b += '1'
+    if b.count('1') % 2 == 0:
+        b += '0'
+    else:
+        b += '1'
+
+    r = int(b,2)
+
+    if r > 97:
+        print(i)
+
+for i in range(1, 100):
+    b = bin(i)[2:]
+    b = b + b[-1]
+    if b.count('1') % 2 == 0:
+        b += '0'
+    else:
+        b += '1'
+    if b.count('1') % 2 == 0:
+        b += '0'
+    else:
+        b += '1'
+    r = int(b,2)
+    if r > 90:
+        print(i)
+
+# складываются все цифры полученной двоичной записи. в конец записи дописывается отстаток от деления полученной суммый на 2
+
+k = 0
+for i in range(1, 100):
+    b = bin(i)[2:]
+    if b.count('1') % 2 == 0:
+        b += '0'
+    else:
+        b += '1'
+    if b.count('1') % 2 == 0:
+        b += '0'
+    else:
+        b += '1'
+    r = int(b,2)
+    if 210 <= r <= 260:
+        k +=1
+print(k)
+
+
+for i in range(1, 100):
+    b = bin(i)[2:]
+    if i % 2 != 0:
+        b = '1' + b + '11'
+    else:
+        b = '11' + b + '00'
+    r = int(b,2)
+    if r < 127:
+        print(r)
+
+
+for i in range(1000, 10000):
+    s = str(i)
+    a = int(s[0]) + int(s[2])
+    b = int(s[1]) + int(s[3])
+
+    if a > b:
+        r = 100 * b + a
+    else:
+        r = 100 * a + b
+
+    if r == 1113:
+        print(i)
+
+
+for i in range(1, 1000):
+    b = bin(i)[2:]
+
+    if b.count('1') > b.count('0'):
+        b = b + '0'
+    else:
+        b = '11' + b
+    if b.count('1') > b.count('0'):
+        b = b + '0'
+    else:
+        b = '11' + b
+
+    r = int(b,2)
+
+    if r > 500:
+        print(i)
+
+#Если N чётное, то к нему справа приписывается в двоичном виде сумма цифр его двоичной записи;
+for n in range(1, 1000):
+    b = bin(n)[2:]
+
+    if n % 2 == 0:
+        b = b + bin(b.count('1'))[2:]
+    else:
+        b = '1' + b + '00'
+
+    r = int(b,2)
+
+    if r > 215:
+        print(n)
