@@ -197,13 +197,162 @@ for x in words:
 # Определите количество пятизначных чисел, записанных в десятичной системе счисления, учитывая, что числа не могут заканчиваться на цифры 3, 4 и 7 и не должны содержать тройки соседних одинаковых цифр (например, 000).
 
 from itertools import product
-words = list(product('0123456789', repeat=5))
+k = 0
+
+for x in product('0123456789',repeat=5):
+    s = ''.join(x)
+    if s[0] != '0' and s[-1] not in '347':
+        if all(d * 3 not in s for d in '0123456789'):
+            k += 1
+print(k)
+
+# Определите количество семизначных чисел, записанных в девятеричной системе счисления, учитывая, что числа не могут начинаться с цифр 3 и 7 и не должны содержать пары соседних одинаковых цифр (например, 00).
+
+from itertools import product
+k = 0
+
+for x in product('012345678',repeat=5):
+    s = ''.join(x)
+    if s[0] != '0' and s[0] not in '37':
+        if all(d * 2 not in s for d in '012345678'):
+            k += 1
+print(k)
+
+
+# согласные в конце и гласные в начале 
+
+from itertools import product
+k = 0
+for x in product('КУМА', repeat=5):
+    s = ''.join(x)
+    if s[0] in 'КМ' and s[-1] in 'УА':
+        k += 1
+print(k)
+
+# буква О повторяется ровно 1 раз 
+
+from itertools import product
+
+k = 0
+for x in product('КРОТ', repeat=6):
+    s = ''.join(x)
+    if s.count('О') == 1:
+        k += 1
+print(k)
+
+# буква E повторяется хотя бы 1 раз 
+
+from itertools import product
+
+k = 0
+for x in product('ЛЕТО', repeat=4):
+    s = ''.join(x)
+    if s.count('Е') >= 1:
+        k += 1
+print(k)
+
+# ровно 1 бука Ж и не может начинаться на Ф и заканччиваться на Р
+from itertools import product
+
+k = 0
+for x in product('ЖИРАФ', repeat=5):
+    s = ''.join(x)
+    if s.count('Ж') == 1 and s[0] != 'Ф' and s[-1] != 'Р':
+        k += 1
+print(k)
+
+# перестановки
+
+from itertools import permutations
+
+k = 0
+for x in set(permutations('АССАСИН')):
+    k += 1
+print(k)
+
+
+from itertools import permutations
+
+k = 0
+for x in permutations('КАЛИЙ'):
+    s = ''.join(x)
+    if s[0] != 'Й' and 'ИА' not in s:
+        k += 1
+print(k)
+
+# Ь не может стоять на первом месте и перед буквами АЕР
+
+from itertools import permutations
+
+k = 0
+for x in permutations('ПЕСКАРЬ'):
+    s = ''.join(x)
+    if s[0] != 'Ь' and 'ЬА' not in s and 'ЬЕ' not in s and 'ЬР' not in s:
+        k += 1
+print(k)
+
+# числа N делящихся на 4 без остатка
+from itertools import product
 
 k = 0
 
-for x in words:
+for x in product('01234567',repeat=4):
     s = ''.join(x)
-    if s[-1] not in '347' and s[0] != '0':
-        if all(d*3 not in s for d in '0123456789'):
-            k += 1
+    if s[0] != '0' and s[-1] in '04':
+        k += 1
 print(k)
+
+
+# порыдок невозрастания 
+
+from itertools import product
+
+k = 0
+
+for x in product('01234567',repeat=4):
+    s = ''.join(x)
+    if s[0] >= s[1] >= s[2] >= s[3]:
+        k += 1
+print(k)
+
+
+# две соседние цифры различны 
+from itertools import product
+
+k = 0
+
+for x in product('01234567',repeat=5):
+    s = ''.join(x)
+    if s[0] != s[1] and s[1] != s[2] and s[2] != s[3] and s[3] != s[4]:
+        k += 1
+print(k)
+
+
+# перебор слов 
+from itertools import product
+k = 0
+for x in product('АКРУ', repeat=5):
+    k += 1
+    s = ''.join(x)
+
+    if k == 150:
+        print(s)
+
+
+from itertools import product
+k = 0
+for x in product('АОУ', repeat=5):
+    k += 1
+    s = ''.join(x)
+
+    if s == "УАУАУ":
+        print(k,s)
+
+
+from itertools import product
+k = 0
+for x in product('АПРСУ',repeat=5):
+    k += 1
+    s = ''.join(x)
+    if s[0] == 'У' and 'АА' not in s:
+        print(k,s)

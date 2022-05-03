@@ -178,7 +178,7 @@ def f(x):
 for x in range(1000):
     if f(x) == 0:
         a.remove(x)
-print(a)  # ответ 8
+print(a)  # ответ 18
 
 
 # отрезки
