@@ -333,3 +333,15 @@ print(len(ans),max(ans))
 
 # если число отрицательное, то abs(a[i])
 # часть условия с союзом или надо брать в скобки (a[i] % 16 == 11 or a[i] % 16 == 13)
+
+a = [int(x) for x in open('17.txt')]
+
+ans = []
+
+n = len(a)
+
+for i in range(n-1):
+    for k in range(i+1, n):
+        if (a[i] * a[k]) % 14 != 0:
+            ans.append(a[i] + a[k])
+print(len(ans),max(ans))

@@ -121,3 +121,81 @@ for j in range(123040, 123081):
                break
    if len(count) == 3:
        print(j," ".join(str(s) for s in count))
+
+# решение на поиск простых чисел
+
+def is_prime(x):
+    for i in range(2,x):
+        if x % i == 0:
+            return False
+    return True
+i = 1
+for x in range(245690,245756+1):
+    if is_prime(x) == True:
+        print(i, x, is_prime(x))
+    i += 1
+            
+# решение на поиск кол-ва делителей и вывод самих делителей
+
+def divisors(x):
+    k = 0
+    for i in range(1,x+1):
+        if x % i == 0:
+            k += 1
+    return k
+
+def divisors_list(x):
+    digits = []
+    for i in range(1,x+1):
+        if x % i == 0:
+            digits.append(i)
+    return digits
+
+for g in range(185311,185330+1):
+    if divisors(g) == 4:
+        print(divisors_list(g))
+# оптимизированный 
+ 
+def divisors_list(x):
+    digits = []
+    for i in range(1,x+1):
+        if x % i == 0:
+            digits.append(i)
+    return digits
+
+for g in range(185311,185330+1):
+    if len(divisors_list(g)) == 4:
+        print(divisors_list(g))
+# Напишите программу, которая ищет среди целых чисел, принадлежащих числовому отрезку [174457; 174505], числа, имеющие ровно два различных натуральных делителя, не считая единицы и самого числа. Для каждого найденного числа запишите эти два делителя в два соседних столбца на экране с новой строки в порядке возрастания произведения этих двух делителей. Делители в строке также должны следовать в порядке возрастания.
+
+# Например, в диапазоне [5; 9] ровно два различных натуральных делителя имеют числа 6 и 8, поэтому для этого диапазона вывод на экране должна содержать следующие значения:
+
+def divisors(x):
+    digits = []
+    for i in range(2, x):
+        if x % i == 0:
+            digits.append(i)
+    return digits
+
+for x in range(174457,174505):
+    if len(divisors(x)) == 2:
+        print(divisors(x))
+
+
+def Del(n):
+    if n==1:
+        return 1
+    k=2
+    for i in range(2,n//2+1):
+        if (n%i==0):
+            k+=1
+    return k
+
+maxDel = Del(84052)
+max=84052
+for i in range(84052,84130):
+    k = Del(i)
+    if k >= maxDel:
+        maxDel =k
+        max = i
+print(maxDel,max)

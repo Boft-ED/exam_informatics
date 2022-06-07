@@ -558,3 +558,18 @@ for n in range(1, 1000):
 
     if r > 215:
         print(n)
+
+
+def f(x):
+    x = str(x)
+    s1 = int(x[0]) + int(x[1])
+    s2 = int(x[1]) + int(x[2])
+    s3 = int(x[2]) + int(x[3])
+    sort = sorted([s1,s2,s3])[1:]
+    return int(str(sort[0]) + str(sort[1]))
+
+for x in range(10000, 1000, -1):
+    if f(x) == 1418:
+        print(x,f(x))
+        break
+
