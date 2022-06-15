@@ -102,3 +102,15 @@ def f(x, y):
 print(f(1, 37))
 
 # если по условии задачи мы идем от большего к меньшему, то нужно изменить знак > на другой
+
+def f(x,y,t):
+    if x == y:
+        return 1
+    if x > y or x == 12 or x == 20:
+        return 0
+    if x < y:
+        if t == 3:
+            return f(x+1,y,1) + f(x+2,y, 2)
+        else:
+            return f(x + 1, y,1) + f(x + 2, y,2) + f(x * 3, y, 3)
+print(f(2,15,0) * f(15,30,0) * f(30,38,0))

@@ -345,3 +345,34 @@ for i in range(n-1):
         if (a[i] * a[k]) % 14 != 0:
             ans.append(a[i] + a[k])
 print(len(ans),max(ans))
+
+
+a = [int(x) for x in open('17.txt')]
+
+ans = []
+n = len(a)
+
+for i in range(n-1):
+    for k in range(i+1, n):
+        if (a[i] + a[k]) % 2 != 0 and (a[i] * a[k]) % 3 == 0:
+            ans.append(a[i] + a[k])
+print(len(ans),max(ans))
+
+
+
+def divisors_list(x):
+    digits = []
+    for i in range(2,x):
+        if x % i == 0:
+            digits.append(i)
+    return digits
+
+
+for x in range(289123456, 389123456 + 1):
+    k = divisors_list(x)
+    if len(k) == 3:
+        print(x,max(k))
+
+
+
+#for x in range(289123456, 389123456 + 1):
