@@ -231,9 +231,67 @@ def divisors(x):
     dels.sort()
     return dels
 
-
-
 for x in range(289123456, 389123456 + 1):
     k = divisors(x)
     if k == 3:
         print(x,max(k))
+
+def M(n):
+    dels = []
+    i = 2
+    while i ** 2 < n:
+        if n % i == 0:
+            dels.append(i)
+            dels.append(n // i)
+        i += 1
+    if n % i == 0:
+        dels.append(i)
+    dels.sort()
+    if len(dels) >= 2:
+        return dels[-1] + dels[-2]
+    else:
+        return 0
+
+for n in range(10000000,100000000+1):
+    dels = M(n)
+    if 0 < dels < 10000:
+        print(min(dels))
+
+
+
+# маски
+k = 0
+num = []
+for i1 in range(0,9+1):
+    for i2 in range(0,9+1):
+        x = 70204 + i1 * 1000 + i2 * 10
+        if x % 23 == 0:
+            num.append(x)
+            k += 1
+print(k,num)
+
+# 12*6789
+# 126789 = 0
+# 1206789 = 0-9
+# 12006789 = 0-99
+# 12996789
+
+if 126789 % 39 == 0:
+    print(126789,126789 // 39)
+
+for i1 in range(0,9+1):
+    x = 1206789 + i1 * 10000
+    if x % 39 == 0:
+        print(x,x // 39)
+
+for i1 in range(0,99+1):
+    x = 12006789 + i1 * 10000
+    if x % 39 == 0:
+        print(x,x // 39)
+
+
+for d1 in '0123456789':
+    for d2 in '0123456789':
+        d = int('12345' + str(d1) + '6' + str(d2) + '8')
+        if d % 17 == 0:
+            print(d,d//17)

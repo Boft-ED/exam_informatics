@@ -10,6 +10,14 @@ a = 49  7 + 7  20 - 28
 
 print(convert(a, 7).count("6"))
 
+x = 2197 ** 50 - 169 ** 35 - 26
+k = 0
+while x > 0:
+    if x % 13 == 12:
+        k += 1
+    x //= 13
+print(k)
+
 x = 1
 while True:
     a = 64 ** 12 - 8 ** 14 + x
