@@ -244,7 +244,7 @@ print(len(ans),max(ans))
 
 a = [int(x) for x in open('17.txt')]
 ans = []
-avg = sum(a)/len(a)
+avg = sum(a)/len(a) # среднее арифм
 
 for i in range(len(a)-1):
     if a[i] > avg and a[i+1] > avg and abs(a[i] + a[i+1]) % 100 == 31:

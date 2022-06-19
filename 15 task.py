@@ -16,27 +16,6 @@ while True:
     A += 1
 
 # делимость ДЕЛ
-for a in range(1, 1000):
-    flaq = 1
-    for x in range(1, 10000):
-        f = (a % 9 == 0) and ((280 % x == 0) <=
-                              ((a % x != 0) <= (730 % x != 0)))
-        if f == 0:
-            flaq = 0
-            break
-    if flaq == 1:
-        print(a)
-
-for a in range(1, 1000):
-    for x in range(1, 10000):
-        f = ((x % 34 == 0) and (x % 51 != 0)) <= (
-            (x % a != 0) or (x % 51 == 0))
-        if f == 0:
-            break
-    else:
-        print(a)
-
-
 def f(x):
     return ((x % 84 != 0) or (x % 90 != 0)) <= (x % a != 0)
 
