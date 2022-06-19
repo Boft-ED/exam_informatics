@@ -12,11 +12,22 @@ for i in range(250, 1000):
         c = i
 print(c)
 
+
 s = 40 * "1" + 40 * "2"
 while "111" in s:
     s = s.replace("111", "2", 1)
     s = s.replace("222", "1", 1)
 print(s)
+
+s = '1' + '23' * 50
+while '123' in s or '1' in s:
+    if '123' in s:
+        s = s.replace('123','23231',1)
+    else:
+        if '1' in s:
+            s = s.replace('1','23',1)
+print(s.count('2'))
+
 
 
 s = 85 * "9"

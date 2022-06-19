@@ -210,7 +210,7 @@ def f(x):
     return (A and (not Q)) <= (P or Q)
 
 m = []
-Ox = [i/4 for i in range(25*4,51*4)]
+Ox = [i/4 for i in range(24*4,51*4)]
 
 for a1,a2 in combinations(Ox,2):
     if all(f(x) == 1 for x in Ox):

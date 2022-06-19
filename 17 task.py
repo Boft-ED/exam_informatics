@@ -376,3 +376,23 @@ for x in range(289123456, 389123456 + 1):
 
 
 #for x in range(289123456, 389123456 + 1):
+
+a = [int(x) for x in open('17var12.txt')]
+
+ans = []
+
+for x in range(len(a)-1):
+    if a[x] > 300 or a[x+1] > 300:
+        ans.append(a[x]**2 + a[x+1]**2)
+print(len(ans),min(ans))
+
+
+a = [int(x) for x in open('17(1).txt')]
+
+ans = []
+q = [i*i for i in range(1,100+1)] # полный квадрат 
+
+for x in range(len(a)-1):
+    if a[x] in q or a[x+1] in q:
+        ans.append(a[x]+a[x+1])
+print(len(ans),min(ans))

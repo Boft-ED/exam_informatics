@@ -581,5 +581,13 @@ for x in range(10, 1001):
 print(len(a))
 
 
-
+for i in range(1,1000):
+    n = bin(i)[2:]
+    if '0' in n:
+       n = n.replace('0','00')
+    if '1' in n:
+       n = n.replace('1','11')
+    r = int(n,2)
+    if r > 63:
+        print(r)
 

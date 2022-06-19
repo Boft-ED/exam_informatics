@@ -25,7 +25,7 @@ print(sum(storage))
 
 # на скидки 
 
-a = [500, 30, 40, 100, 50, 80, 1000, 150, 200]
+a = [int(x) for x in open('27884.txt')]
 a.sort()
 not_sale = []
 sale = []
